@@ -5,7 +5,7 @@ Y = []
 xy = []
 xx =[]
 y2 = []
-n = 10000
+n = 100
 for i in range(n):
     X.append(rnd.randint(12,24))
 sx = sum(X)
