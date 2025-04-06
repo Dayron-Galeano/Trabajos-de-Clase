@@ -2,6 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from time import perf_counter_ns
 
+opcion = str(input("Ingrese una opción (Op: Para obtener el # de operaciones) o (Tm: Para obtener el tiempo que tarda): " )) 
+
 def bubble_sort(L):
     operaciones = 0
     n = len(L)
@@ -79,15 +81,17 @@ for i, n in enumerate(num_elements) :
     t_insertion[i] = t_final - t_inicio
     print(A)
     vector_ord = vector.copy()
-    
     t_inicio = perf_counter_ns()
-    A, ops = insertion_sort(vector_ord)
+    A, ops = selection(vector_ord)
     t_final = perf_counter_ns()
     ops_selection[i] = ops
     t_selection[i] = t_final - t_inicio
 
-
-plt.plot(num_elements, t_bubble, "g-", num_elements, t_insertion, "b-", num_elements, t_selection, "r-")
-plt.show()
-plt.plot(num_elements, ops_bubble, "g-", num_elements, ops_insertion, "b*", num_elements, ops_selection, "r-")
-plt.show()
+if opcion == "Tm":
+    plt.plot(num_elements, t_bubble, "g-", num_elements, t_insertion, "b-", num_elements, t_selection, "r-")
+    plt.show()
+elif opcion == "Op":
+    plt.plot(num_elements, ops_bubble, "g-", num_elements, ops_insertion, "b-", num_elements, ops_selection, "r-")
+    plt.show()
+else:
+    print("La opción es incorrecta, vuelva a ejecutar")
