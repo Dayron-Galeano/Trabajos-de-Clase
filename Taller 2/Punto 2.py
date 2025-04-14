@@ -23,7 +23,13 @@ for i in range (letras):
         nueva.append(palabra[i])
 '''Se imprimen los elementos que se tienen en cuenta'''
 print("Elementos que se tienen en cuenta:",nueva)
+'''Se crea la variable n1 que sirve como guardado de nueva, para que luego nueva se la misma
+que antes del while, ya que con el .pop, se irá
+reduciendo'''
 n1 = nueva
+'''Utilizo factorial ya que eso me permite saber el número de posibles permutaciones,
+y utilizo while, ya que como las palabras se forman aleatoriamente, existe la posibilidad de
+que se repitan, si esto pasa, la lista no la tomara en cuenta, afectando el número de resultados'''
 permutaciones = math.factorial(len(nueva))
 while len(final) < permutaciones:
     pb = ""
@@ -33,5 +39,6 @@ while len(final) < permutaciones:
     pbf = pb
     if pbf not in final:
         final.append(pbf)
+'''Por ultimo imprimo cada palabra de final'''
 for c in range(len(final)):
     print(f"La palabra número {c+1} es : {final[c]}")
