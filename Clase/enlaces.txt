@@ -1,0 +1,2 @@
+https://inventwithpython.com/es/17.html
+https://github.com/sergiogelvez/MaterialClases/blob/main/Programas%20Clase%202022-%5B1%202%5D/Fundamentos/animacion.py
